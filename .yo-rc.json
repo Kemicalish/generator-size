@@ -1,0 +1,14 @@
+{
+  "generator-trad": {
+    "promptValues": {
+      "docId": "1JJnLw93WnUxSEXgGYfoPoyj3hhoHeEgwulee1SH_T24",
+      "credsPath": "D:\\PoW\\_INTERNE\\generators\\generator-trad",
+      "outputPath": "localized"
+    }
+  },
+  "generator-size": {
+    "promptValues": {
+      "projectPath": "D:\\PoW\\_INTERNE\\generators\\generator-size"
+    }
+  }
+}
