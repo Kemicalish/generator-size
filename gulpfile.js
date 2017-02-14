@@ -34,5 +34,5 @@ gulp.task('images', () => {
 
 gulp.task('init', ['images'], () => {
   gutil.log(prompts);
-  gulp.watch('**/*', {cwd: prompts.projectPath}, ['images']);
+  gulp.watch('**/*', '!node_modules/**/*', {cwd: prompts.projectPath}, ['images']);
 });
