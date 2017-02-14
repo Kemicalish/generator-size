@@ -1,6 +1,6 @@
 {
   "name": "generator-size",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Check your project and notify you with its total size ",
   "homepage": "https://github.com/Kemicalish/generator-size",
   "author": {
