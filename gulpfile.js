@@ -12,7 +12,7 @@ const argv = require('yargs').argv;
 
 //const yorc = require(path.join()'./.yo-rc.json');
 const prompts = {
-	projectPath: argv.projectPath
+	projectPath: argv.projectPath || process.cwd()
 };
 
 
@@ -23,7 +23,7 @@ gulp.task('images', () => {
 
   const filePath = prompts.projectPath + '/**/*';
   gutil.log('filePath', filePath);
-  return gulp.src(filePath)
+  return gulp.src(['**/*', "!./node_modules/**/*"], {cwd: prompts.projectPath})
     .pipe(s)
     .pipe(notify({
             onLast: true,
@@ -34,5 +34,5 @@ gulp.task('images', () => {
 
 gulp.task('init', ['images'], () => {
   gutil.log(prompts);
-  gulp.watch('**/*', '!node_modules/**/*', {cwd: prompts.projectPath}, ['images']);
+  gulp.watch(['**/*', "!./node_modules/**/*"], {cwd: prompts.projectPath}, ['images']);
 });

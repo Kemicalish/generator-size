@@ -32,11 +32,15 @@ module.exports = Generator.extend({
     const execDir = path.join(this.sourceRoot(), '..', '..');
     const settings = this.config.getAll().promptValues || {};
 
-    this.spawnCommand('gulp', ['init', '--projectPath', settings.projectPath, '--credsPath', settings.credsPath], {
+    this.spawnCommand('npm', ['install'], {
         cwd: execDir
     }).on('close', () => {
-       
-    })
+        this.spawnCommand('gulp', ['init', '--projectPath', settings.projectPath, '--credsPath', settings.credsPath], {
+            cwd: execDir
+        }).on('close', () => {
+          
+        });
+    });
   }
 });
 
